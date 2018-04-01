@@ -1,0 +1,19 @@
+<md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">{{details.customer.name}}</span>
+            <span class="md-subhead">{{details.customer.id}}</span>
+          </md-card-title-text>
+ </md-card-title>
+ <md-card-content>
+       
+        <p>Name: {{details.customer.company}}</p>
+        <p>Phone: {{details.customer.phone}}</p>
+        <p>E-mail: {{details.customer.email}}</p>
+        <p>Date: {{details.customer.date}}</p> 
+ </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button ng-click="details.edit(details.customer)">Edit</md-button>
+          <md-button ng-click="details.delete(details.customer.id)">Delete</md-button>
+        </md-card-actions>
+      </md-card>

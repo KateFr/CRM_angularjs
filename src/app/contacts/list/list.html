@@ -1,0 +1,39 @@
+<md-list>
+  <md-list-item ng-repeat="customer in list.customers | orderBy:'name'">
+    <div class="avatar">
+      <md-icon class="icon md-accent">account_circle</md-icon>
+    </div>
+    <div class="md-list-item-text">
+      <h3>{{customer.name}}</h3>
+      <p>{{customer.company}}</p>   
+    </div>
+    
+    <md-menu class="md-secondary">
+      <md-button class="md-icon-button">
+        <md-tooltip md-direction="left">Click to show menu</md-tooltip>
+        <md-icon> menu </md-icon>
+      </md-button>
+      <md-menu-content width="4">
+        <md-menu-item>
+              <md-button class="md-accent" ng-click="list.showDetails(customer.id)">
+                <md-icon>card_membership</md-icon>
+                Details
+              </md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button class="md-accent" ng-click="list.edit(customer)">
+            <md-icon>edit</md-icon>
+            Edit
+          </md-button>
+        </md-menu-item>
+        <md-menu-divider></md-menu-divider>
+        <md-menu-item>
+          <md-button class="md-warn" ng-click="list.delete(customer.id)">
+            <md-icon>delete</md-icon>
+            Delete
+          </md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+  </md-list-item>
+</md-list>
